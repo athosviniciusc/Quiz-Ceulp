@@ -1,0 +1,57 @@
+
+<app-bread-crumb [itens]="[{text: 'Quiz'}]">
+</app-bread-crumb>
+
+<app-pages-header
+  page-title="Quiz"
+  show-button= true
+  button-text="+ Novo"
+  button-link="new"
+  button-class="btn-success"
+> </app-pages-header>
+
+
+<table class="table table-hover">
+  <thead>
+  <tr class="bg-primary text-light">
+    <th>
+      Título
+    </th>
+    <th>
+      Autor
+    </th>
+    <th>
+      Data
+    </th>
+    <th class="text-center">
+      Ações
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let entry of resource">
+    <td>
+      <strong>{{entry.name}}</strong><br>
+      <strong class="text-success">{{entry.date}}</strong><br>
+      <small *ngIf="entry.description">{{entry.description}}</small>
+    </td>
+    <td>
+      {{entry.category.name}}
+    </td>
+    <td class="text-right">
+      <strong [class.text-success] ="entry.types == 'revenue'" [class.text-danger]="entry.types == 'expense'">
+        {{entry.amount}}
+      </strong>
+      <br>
+      <span class="badge badge-light">{{entry.paidText}}</span>
+    </td>
+
+    <td class="text-center">
+      <a [routerLink]="[entry.id,'edit']" class="btn btn-outline-info btn-sm mp-3 mr-3">Editar</a>
+      <button (click)="DeleteResource(entry)" class="btn btn-outline-danger btn-sm">Excluir</button>
+    </td>
+  </tr>
+
+  </tbody>
+
+</table>

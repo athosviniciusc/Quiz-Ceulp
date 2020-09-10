@@ -1,0 +1,99 @@
+
+<app-bread-crumb [itens]="[{text: 'Quiz', link: '/quiz'},{text:pageTitle}]">
+</app-bread-crumb>
+
+<app-pages-header
+  [page-title]="pageTitle"
+  show-button= true
+  button-text="<< Voltar"
+  button-link="/quiz"
+  button-class="btn-light"
+> </app-pages-header>
+
+
+<form [formGroup]="resourceForm" (submit)="submitForm()">
+  <div class="card">
+    <div class="card-header">
+      Informações dos lançamentos
+    </div>
+
+    <div class="card-body">
+      <div class="form-row">
+
+        <!--Título-->
+        <div class="form-group col-md-6">
+          <label for="title">Título</label>
+          <input type="text" class="form-control" id="title" formControlName="title">
+
+          <app-form-field-error [form-control]="resourceForm.get('title')"></app-form-field-error>
+
+        </div>
+
+        <!-- Tema -->
+        <div class="form-group col-md-6">
+          <label for="theme">Tema</label>
+          <input type="text" class="form-control" id="theme" formControlName="theme">
+
+          <app-form-field-error [form-control]="resourceForm.get('theme')"></app-form-field-error>
+
+        </div>
+
+        <!-- Área Técnica -->
+        <div class="form-group col-md-6">
+          <label for="techinical">Área Técnica</label>
+          <input type="text" class="form-control" id="techinical" formControlName="techinical">
+
+          <app-form-field-error [form-control]="resourceForm.get('techinical')"></app-form-field-error>
+
+        </div>
+
+        <!-- Afiliação -->
+        <div class="form-group col-md-6">
+          <label for="afiliation">Afiliação</label>
+          <input type="text" class="form-control" id="afiliation" formControlName="afiliation">
+
+          <app-form-field-error [form-control]="resourceForm.get('afiliation')"></app-form-field-error>
+
+        </div>
+
+        <!-- Local -->
+        <div class="form-group col-md-4">
+          <label for="local">Local</label>
+          <input type="text" class="form-control" id="local" formControlName="local">
+
+          <app-form-field-error [form-control]="resourceForm.get('local')"></app-form-field-error>
+
+        </div>
+
+        <!-- Date -->
+        <div class="form-group col-md-2">
+          <label for="date">Data</label>
+          <p-calendar
+            id="date"
+            formControlName="date"
+            inputStyleClass="form-control"
+            dataType="string"
+            dateFormat="dd/mm/yy"
+            [locale]="ptBR"
+            [showButtonBar]="true" >
+          </p-calendar>
+
+          <app-form-field-error [form-control]="resourceForm.get('date')"></app-form-field-error>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <app-server-error-messages [server-error-messages]="serverErrorMessages"></app-server-error-messages>
+
+
+  <button  [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg mt-3 float-right">Salvar</button>
+</form>
+
+
+
+
+<pre>{{resourceForm.value | json}}</pre>
