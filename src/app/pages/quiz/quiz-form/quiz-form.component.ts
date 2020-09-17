@@ -72,9 +72,29 @@ export class QuizFormComponent extends BaseResourceFormComponent<Quiz> implement
       title: [null, [Validators.required, Validators.minLength(2)]],
       theme: [null, [Validators.required]],
       techinical: [null, [Validators.required]],
-      afiliation: [null],
+      autores: [null, [Validators.required]],
       date: [null, [Validators.required]],
       local: [null, [Validators.required]],
+      introducao: [null, [Validators.required]],
+      type: [null, [Validators.required]],
+      estudent: [null, [Validators.required]],
+      domin: [null, [Validators.required]],
+      object: [null, [Validators.required]],
+      linguage: [null, [Validators.required]],
+      glossario: [null, [Validators.required]],
+      executation: [null, [Validators.required]],
+      objectExp: [null, [Validators.required]],
+      questExp: [null, [Validators.required]],
+      link: [null, [Validators.required]],
+      context: [null, [Validators.required]],
+      hipotese: [null, [Validators.required]],
+      variavelIn: [null, [Validators.required]],
+      variavelD: [null, [Validators.required]],
+
+
+
+
+
       categoryId: [null, [Validators.required]],
 
     });

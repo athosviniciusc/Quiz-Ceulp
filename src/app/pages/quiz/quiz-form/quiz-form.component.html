@@ -14,11 +14,15 @@
 <form [formGroup]="resourceForm" (submit)="submitForm()">
   <div class="card">
     <div class="card-header">
-      Informações dos lançamentos
+        Informações dos lançamentos
     </div>
 
     <div class="card-body">
       <div class="form-row">
+
+        <div class="form-group col-md-12">
+          <p><b>IDENTIFICAÇÃO</b></p>
+        </div>
 
         <!--Título-->
         <div class="form-group col-md-6">
@@ -47,12 +51,12 @@
 
         </div>
 
-        <!-- Afiliação -->
+        <!-- Autores -->
         <div class="form-group col-md-6">
-          <label for="afiliation">Afiliação</label>
-          <input type="text" class="form-control" id="afiliation" formControlName="afiliation">
+          <label for="autores">Autores</label>
+          <input type="text" class="form-control" id="autores" formControlName="autores">
 
-          <app-form-field-error [form-control]="resourceForm.get('afiliation')"></app-form-field-error>
+          <app-form-field-error [form-control]="resourceForm.get('autores')"></app-form-field-error>
 
         </div>
 
@@ -81,6 +85,166 @@
           <app-form-field-error [form-control]="resourceForm.get('date')"></app-form-field-error>
 
         </div>
+
+        <div class="form-group col-md-12">
+          <p><b>INTRODUÇÃO</b></p>
+        </div>
+
+        <!-- introducao -->
+        <div class="form-group col-md-12">
+          <label for="introducao">Introdução</label>
+          <textarea type="text" class="form-control" id="introducao" formControlName="introducao"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('introducao')"></app-form-field-error>
+
+        </div>
+        <div class="form-group col-md-12">
+          <p><b>CARACTERIZAÇÃO</b></p>
+        </div>
+
+        <!-- tipo de estudo -->
+        <div class="form-group col-md-6">
+          <label for="type">Tipo de estudo</label>
+          <input type="text" class="form-control" id="type" formControlName="type">
+
+          <app-form-field-error [form-control]="resourceForm.get('type')"></app-form-field-error>
+
+        </div>
+
+        <!-- Objetivo do estudo -->
+        <div class="form-group col-md-6">
+          <label for="estudent">Objetivo do estudo</label>
+          <input type="text" class="form-control" id="estudent" formControlName="estudent">
+
+          <app-form-field-error [form-control]="resourceForm.get('estudent')"></app-form-field-error>
+
+        </div>
+
+        <!-- dominínio -->
+        <div class="form-group col-md-6">
+          <label for="domin">Dominínio</label>
+          <input type="text" class="form-control" id="domin" formControlName="domin">
+
+          <app-form-field-error [form-control]="resourceForm.get('domin')"></app-form-field-error>
+
+        </div>
+
+        <!-- Objetivo -->
+        <div class="form-group col-md-6">
+          <label for="object">Objetivo</label>
+          <input type="text" class="form-control" id="object" formControlName="object">
+
+          <app-form-field-error [form-control]="resourceForm.get('object')"></app-form-field-error>
+
+        </div>
+
+        <!-- Linguagem -->
+        <div class="form-group col-md-6">
+          <label for="linguage">Linguagem</label>
+          <input type="text" class="form-control" id="linguage" formControlName="linguage">
+
+          <app-form-field-error [form-control]="resourceForm.get('linguage')"></app-form-field-error>
+
+        </div>
+
+        <!-- Glossório -->
+        <div class="form-group col-md-6">
+          <label for="glossario">Glossório</label>
+          <input type="text" class="form-control" id="glossario" formControlName="glossario">
+
+          <app-form-field-error [form-control]="resourceForm.get('glossario')"></app-form-field-error>
+
+        </div>
+
+        <!-- N° de execuções -->
+        <div class="form-group col-md-4">
+          <label for="executation">N° de execuções</label>
+          <input type="text" class="form-control" id="executation" formControlName="executation">
+
+          <app-form-field-error [form-control]="resourceForm.get('executation')"></app-form-field-error>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <p><b>DEFINIÇÃO DO EXPERIMENTO</b></p>
+        </div>
+
+        <!-- OBJETIVO DO EXPERIEMENTO -->
+        <div class="form-group col-md-12">
+          <label for="objectExp">Objetivo do experimento</label>
+          <textarea type="text" class="form-control" id="objectExp" formControlName="objectExp"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('objectExp')"></app-form-field-error>
+
+        </div>
+
+        <!-- Questões, Váriaveis e Métricas -->
+        <div class="form-group col-md-12">
+          <label for="questExp">Questões, Váriaveis e Métricas</label>
+          <textarea type="text" class="form-control" id="questExp" formControlName="questExp"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('questExp')"></app-form-field-error>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <p><b>LINK DO PROGRAMA</b></p>
+        </div>
+        <!-- Link do programa -->
+        <div class="form-group col-md-6">
+          <label for="link">Link do programa</label>
+          <input type="text" class="form-control" id="link" formControlName="link">
+
+          <app-form-field-error [form-control]="resourceForm.get('link')"></app-form-field-error>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <p><b>CONTEXTO</b></p>
+        </div>
+        <!-- Contexto -->
+        <div class="form-group col-md-12">
+          <label for="context">Contexto</label>
+          <textarea type="text" class="form-control" id="context" formControlName="context"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('context')"></app-form-field-error>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <p><b>HIPÓTESE</b></p>
+        </div>
+        <!-- HIPÓTESE -->
+        <div class="form-group col-md-12">
+          <label for="hipotese">Hipótese</label>
+          <textarea type="text" class="form-control" id="hipotese" formControlName="hipotese"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('hipotese')"></app-form-field-error>
+
+        </div>
+
+        <div class="form-group col-md-12">
+          <p><b>VARIÁVEL(IS)</b></p>
+        </div>
+        <!-- VARIÁVEL(IS) INDEPENDENTE(S -->
+        <div class="form-group col-md-6">
+          <label for="variavelIn">Variável(is) Independente(s)</label>
+          <textarea type="text" class="form-control" id="variavelIn" formControlName="variavelIn"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('variavelIn')"></app-form-field-error>
+
+        </div>
+        <!-- VARIÁVEL(IS) DEPENDENTE(S -->
+        <div class="form-group col-md-6">
+          <label for="variavelD">Variável(is) dependente(s)</label>
+          <textarea type="text" class="form-control" id="variavelD" formControlName="variavelD"> </textarea>
+
+          <app-form-field-error [form-control]="resourceForm.get('variavelD')"></app-form-field-error>
+
+        </div>
+
+
+      <!-- final -->
       </div>
 
     </div>
@@ -92,6 +256,7 @@
 
   <button  [disabled]="submittingForm || resourceForm.invalid" type="submit" class="btn btn-primary btn-lg mt-3 float-right">Salvar</button>
 </form>
+
 
 
 
